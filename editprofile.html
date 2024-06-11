@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <form action="#" name="register1">
+        <div class="container">
+            <h1>Edit Profile</h1>
+            <!-- <p>Edit Profile</p> -->
+            <hr>
+            
+            <img src="img/male.jpg" alt="userpic" width="200" height="200" class="img_center">
+            <br>
+            <label for="name"><b>Name</b></label> 
+            <input type="text" placeholder="Enter Name" value="Ram karki" name="name" id="name"required>
+
+            <label for="email"><b>Email</b></label> 
+            <input type="text" placeholder="Enter Email" value="ram_karki@gmail.com" name="email" id="email"required>
+
+            <label for="address"><b>Address</b></label>
+            <input type="text" placeholder="Enter Address" value="Chabahil" name="address" id="address" required>
+
+            <label for="gender"><b>Gender</b></label>
+            <select name="gender" id="gender">
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+            </select>
+
+            <label for="dob"><b>Date of Birth</b></label>
+            <input type="date" placeholder="Enter Date of birth" name="dob" value="1999-01-08" id="dob" required>
+
+           
+
+            <input type="submit" name="register"  value="Update" class="registerbtn" onclick="ValidateEmail(document.register1.email)" >
+        </div>
+
+        <div class="container signin">
+            <a href="userlisting.html">View Users</a>
+        </div>
+    </form>
+<script src="js/validation.js"></script>
+</body>
+
+</html>
