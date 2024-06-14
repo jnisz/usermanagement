@@ -1,49 +1,181 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        .error {
+            color: #e53e3e; 
+        }
+        
+       
+    
+    </style>
 </head>
+<body class="flex items-center justify-center min-h-screen bg-gray-100">
 
-<body>
-
-    <form action="#" name="register1">
-        <div class="container">
-            <h1>Edit Profile</h1>
-            <!-- <p>Edit Profile</p> -->
-            <hr>
+    <div class="w-full max-w-md p-8 space-y-6 bg-white rounded-lg shadow-lg">
+        <h2 class="text-2xl font-bold text-center text-gray-900">Profile</h2>
+        
+        <form id="registrationForm" class="space-y-6" action="#" method="POST">
             
-            <img src="img/male.jpg" alt="userpic" width="200" height="200" class="img_center">
-            <br>
-            <label for="name"><b>Name</b></label> 
-            <input type="text" placeholder="Enter Name" value="Ram karki" name="name" id="name"required>
+            <div class="space-y-1">
+                <label for="name" class="block text-sm font-medium text-gray-700">Name</label>
+                <input type="text" id="name" name="name" value="Ram karki" required
+                       class="w-full px-3 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500">
+                <p id="nameError" class="error hidden">Name is required and should be at least 3 characters long.</p>
+            </div>
 
-            <label for="email"><b>Email</b></label> 
-            <input type="text" placeholder="Enter Email" value="ram_karki@gmail.com" name="email" id="email"required>
 
-            <label for="address"><b>Address</b></label>
-            <input type="text" placeholder="Enter Address" value="Chabahil" name="address" id="address" required>
+            <div class="space-y-1">
+                <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
+                <input type="email" id="email" name="email" value="Ram_karki@gmail.com" required
+                       class="w-full px-3 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500">
+                <p id="emailError" class="error hidden">Please enter a valid email address.</p>
+            </div>
 
-            <label for="gender"><b>Gender</b></label>
-            <select name="gender" id="gender">
-                <option value="male">Male</option>
-                <option value="female">Female</option>
-            </select>
-
-            <label for="dob"><b>Date of Birth</b></label>
-            <input type="date" placeholder="Enter Date of birth" name="dob" value="1999-01-08" id="dob" required>
+            <div class="space-y-1">
+                <label for="address" class="block text-sm font-medium text-gray-700">Address</label>
+                <input type="address" id="address" name="address" value="chabahil" required
+                       class="w-full px-3 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500">
+                <p id="addressError" class="error hidden">Please enter a valid address.</p>
+            </div>
 
            
+            <div class="space-y-1">
+                <label for="gender" class="block text-sm font-medium text-gray-700">Gender</label>
+                <select class="w-full px-3 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500" name="gender" id="gender">
+                    <option value="">Select your gender</option>
+                    <option value="male" selected>Male</option>
+                    <option value="female">Female</option>
+                </select>
+                <p id="genderError" class="error hidden">Please enter a valid gender.</p>
+            </div>
 
-            <input type="submit" name="register"  value="Update" class="registerbtn" onclick="ValidateEmail(document.register1.email)" >
-        </div>
+            
 
-        <div class="container signin">
-            <a href="userlisting.html">View Users</a>
-        </div>
-    </form>
-<script src="js/validation.js"></script>
+            <div class="space-y-1">
+                <label for="dob" class="block text-sm font-medium text-gray-700">Date of birth</label>
+                <input type="date" id="dob" name="dob" required value="2002-04-05"
+                       class="w-full px-3 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500">
+                <p id="dobError" class="error hidden">Please enter a valid Date of birth.</p>
+            </div> 
+            
+
+            <div>
+                <button type="submit"
+                        class="w-full px-4 py-2 text-white bg-indigo-600 rounded-lg shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                    Update
+                </button>
+            </div>
+            
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('registrationForm').addEventListener('submit', function(event) {
+            // Prevent form submission
+            event.preventDefault();
+
+            // Validation flags
+            let isValid = true;
+
+            // name validation
+            const name = document.getElementById('name').value.trim();
+            const nameError = document.getElementById('nameError');
+            if (name.length < 3) {
+                nameError.classList.remove('hidden');
+                isValid = false;
+            } else {
+                nameError.classList.add('hidden');
+            }
+
+            // Email validation
+            const email = document.getElementById('email').value.trim();
+            const emailError = document.getElementById('emailError');
+            const emailPattern = /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/;
+            if (!emailPattern.test(email)) {
+                emailError.classList.remove('hidden');
+                isValid = false;
+            } else {
+                emailError.classList.add('hidden');
+            }
+
+            // address validation
+            const address = document.getElementById('address').value.trim();
+            const addressError = document.getElementById('addressError');
+            if (address.length < 3) {
+                addressError.classList.remove('hidden');
+                isValid = false;
+            } else {
+                nameError.classList.add('hidden');
+            }
+            
+            // gender validation
+            const gender = document.getElementById('gender').value.trim();
+            const genderError = document.getElementById('genderError');
+            if (gender.value === "")  {
+                genderError.classList.remove('hidden');
+                isValid = false;
+            } else {
+                genderError.classList.add('hidden');
+            }
+
+            // photo validation
+            const photo = document.getElementById('photo').value.trim();
+            const photoError = document.getElementById('photoError');
+            if (!photo) {
+                photoError.classList.remove('hidden');
+                isValid = false;
+            } else {
+                photoError.classList.add('hidden');
+            }
+
+            // dob validation
+            const dobInput = document.getElementById('dob').value.trim();
+            const dobError = document.getElementById('dobError');
+
+          // Validate that a date is selected
+            if (!dobInput) {
+                dobError.classList.remove('hidden');
+                isValid = false;
+            }
+
+            else {
+                            
+                nameError.classList.add('hidden');
+            }
+
+
+
+            // Password validation
+            const password = document.getElementById('password').value.trim();
+            const passwordError = document.getElementById('passwordError');
+            if (password.length < 6) {
+                passwordError.classList.remove('hidden');
+                isValid = false;
+            } else {
+                passwordError.classList.add('hidden');
+            }
+
+            // Confirm password validation
+            const confirmPassword = document.getElementById('password-confirmation').value.trim();
+            const confirmPasswordError = document.getElementById('confirmPasswordError');
+            if (password !== confirmPassword) {
+                confirmPasswordError.classList.remove('hidden');
+                isValid = false;
+            } else {
+                confirmPasswordError.classList.add('hidden');
+            }
+
+            // If the form is valid, submit it
+            if (isValid) {
+                this.submit();
+            }
+        });
+    </script>
+
 </body>
-
 </html>
