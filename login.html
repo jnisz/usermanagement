@@ -3,45 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Form</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <style>
-        .error {
-            color: #e53e3e; /* Tailwind's red-600 color */
-        }
-        .hidden {
-            display: none;
-        }
-    </style>
+    <title>Navbar, Footer, and Login Page</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
 </head>
-<body class="flex items-center justify-center min-h-screen bg-gray-100">
-
-    <div class="w-full max-w-md p-8 space-y-6 bg-white rounded-lg shadow-lg">
-        <h2 class="text-2xl font-bold text-center text-gray-900">Login to Your Account</h2>
-        
-        <form id="loginForm" class="space-y-6" action="#" method="POST">
-            <div class="space-y-1">
-                <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
-                <input type="email" id="email" name="email" required
-                       class="w-full px-3 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500">
-                <p id="emailError" class="error hidden">Please enter a valid email address.</p>
+<body class="bg-gray-100">
+    <!-- Navbar -->
+    <nav class="bg-white shadow-md">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <div class="text-2xl font-bold text-gray-800">
+                    <a href="#">UBA-IMS</a>
+                </div>
+                <div class="hidden md:flex space-x-6">
+                    <a href="login.html" class="text-gray-800 hover:text-gray-600">Login</a>
+                    <a href="registration.html" class="text-gray-800 hover:text-gray-600">Register</a>
+                    <a href="userlisting.html" class="text-gray-800 hover:text-gray-600">View Users</a>
+                </div>
+                
             </div>
+        </div>
+       
+    </nav>
 
-            <div class="space-y-1">
-                <label for="password" class="block text-sm font-medium text-gray-700">Password</label>
-                <input type="password" id="password" name="password" required
-                       class="w-full px-3 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500">
-                <p id="passwordError" class="error hidden">Password is required and should be at least 6 characters long.</p>
-            </div>
-
-            <div>
-                <button type="submit"
-                        class="w-full px-4 py-2 text-white bg-indigo-600 rounded-lg shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
-                    Login
-                </button>
-            </div>
-        </form>
+    <!-- Login Page -->
+    <div class="container mx-auto mt-10">
+        <div class="max-w-md mx-auto bg-white p-8 rounded-lg shadow-lg">
+            <h2 class="text-2xl font-bold mb-6 text-gray-800">Login</h2>
+            <form id="loginForm">
+                <div class="mb-4">
+                    <label class="block text-gray-700 mb-2" for="email">Email</label>
+                    <input class="w-full px-3 py-2 border border-gray-300 rounded" type="text" id="email" name="email" >
+                    <p id="emailError" class="text-red-500 hidden">Please enter a valid email address.</p>
+                </div>
+                <div class="mb-4">
+                    <label class="block text-gray-700 mb-2" for="password">Password</label>
+                    <input class="w-full px-3 py-2 border border-gray-300 rounded" type="password" id="password" name="password" >
+                    <p id="passwordError" class="text-red-500 hidden">Password is required and should be at least 6 characters long.</p>
+                </div>
+                <div class="mb-4">
+                    <input type="checkbox" id="remember" name="remember" class="mr-2 leading-tight">
+                    <label for="remember" class="text-gray-700">Remember me</label>
+                </div>
+                <button class="w-full bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600" type="submit">Login</button>
+                <div class="container signin">
+                    <br>
+                    <p>Dont have account ? <a  href="registration.html">Register</a>.</p>
+                </div>
+            </form>
+        </div>
     </div>
+
+    
 
     <script>
         document.getElementById('loginForm').addEventListener('submit', function(event) {
@@ -78,6 +90,5 @@
             }
         });
     </script>
-
 </body>
 </html>

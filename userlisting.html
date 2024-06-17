@@ -3,88 +3,114 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Users List</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <title>Navbar, Footer, and Login Page</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
 </head>
-<body class="flex items-center justify-center min-h-screen bg-gray-100">
+<body class="bg-gray-100">
+    <!-- Navbar -->
+    <nav class="bg-white shadow-md">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <div class="text-2xl font-bold text-gray-800">
+                    <a href="#">UBA-IMS</a>
+                </div>
+                <div class="hidden md:flex space-x-6">
+                    <a href="login.html" class="text-gray-800 hover:text-gray-600">Login</a>
+                    <a href="registration.html" class="text-gray-800 hover:text-gray-600">Register</a>
+                    <a href="userlisting.html" class="text-gray-800 hover:text-gray-600">View Users</a>
+                </div>
+                
+            </div>
+        </div>
+       
+    </nav>
 
-    <div class="container mx-auto p-8 bg-white">     
-        <h2 class="text-2xl font-bold text-center text-gray-900 mb-6">Users List</h2>
-
-        <div class="overflow-x-auto bg-white rounded-lg shadow-md">
-            <table class="min-w-full divide-y divide-gray-200">
-                <thead class="bg-gray-50">
-                    <tr>
-                        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">ID</th>
-                        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Name</th>
-                        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Address</th>
-                        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Email</th>
-                        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Gender</th>
-                        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Image</th>
-                        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Actions</th>
-
-                    </tr>
-                </thead>
-                <tbody class="bg-white divide-y divide-gray-200">
-                    <tr class="hover:bg-gray-50">
-                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">1</td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Ram karki</td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Chabahil</td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">ram_karki@gmail.com</td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Male</td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500"><img src="img/male.jpg" alt="male" width="50" height="60"></td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
-                            <a href="editprofile.html" class="text-indigo-600 hover:text-indigo-900">Edit</a>
-                            <a href="#" class="ml-4 text-red-600 hover:text-red-900">Delete</a>
-                        </td>
-                    </tr>
-                    <tr class="bg-gray-50 hover:bg-gray-100">
-    
-                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">1</td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Shyam shrestha</td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Gokarna</td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">shyam@gmail.com</td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Male</td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500"><img src="img/male.jpg" alt="male" width="50" height="60"></td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
-                            <a href="editprofile.html" class="text-indigo-600 hover:text-indigo-900">Edit</a>
-                            <a href="#" class="ml-4 text-red-600 hover:text-red-900">Delete</a>
-                        </td>
-                            
-                    </tr>
-                    <tr class="bg-gray-50 hover:bg-gray-100">
-    
-                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">1</td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">sita shrestha</td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">koteshor</td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">sita@gmail.com</td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Female</td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500"><img src="img/female.jpg" alt="male" width="50" height="60"></td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
-                            <a href="editprofile.html" class="text-indigo-600 hover:text-indigo-900">Edit</a>
-                            <a href="#" class="ml-4 text-red-600 hover:text-red-900">Delete</a>
-                        </td>
-                           
-                    </tr>
-
-                    <tr class="bg-gray-50 hover:bg-gray-100">
-    
-                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">1</td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">dipa shrestha</td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">kritipur</td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">dipa45@gmail.com</td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Female</td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500"><img src="img/female.jpg" alt="male" width="50" height="60"></td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
-                            <a href="editprofile.html" class="text-indigo-600 hover:text-indigo-900">Edit</a>
-                            <a href="#" class="ml-4 text-red-600 hover:text-red-900">Delete</a>
-                        </td>
-                           
-                    </tr>
-                </tbody>
-            </table>
+    <!-- Login Page -->
+    <div class="container mx-auto mt-10">
+        <div class="container mx-auto p-8 bg-white rounded-lg shadow-lg">
+           
+           
+                <h2 class="text-2xl font-bold text-center text-gray-900 mb-6">Users List</h2>
+        
+                <div class="overflow-x-auto bg-white rounded-lg shadow-md">
+                    <table class="min-w-full divide-y divide-gray-200">
+                        <thead class="bg-gray-50">
+                            <tr>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">ID</th>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Name</th>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Address</th>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Email</th>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Gender</th>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Image</th>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Actions</th>
+        
+                            </tr>
+                        </thead>
+                        <tbody class="bg-white divide-y divide-gray-200">
+                            <tr class="hover:bg-gray-50">
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">1</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Ram karki</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Chabahil</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">ram_karki@gmail.com</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Male</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500"><img src="img/male.jpg" alt="male" width="50" height="60"></td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
+                                    <a href="editprofile.html" class="text-indigo-600 hover:text-indigo-900">Edit</a>
+                                    <a href="#" class="ml-4 text-red-600 hover:text-red-900">Delete</a>
+                                </td>
+                            </tr>
+                            <tr class="bg-gray-50 hover:bg-gray-100">
+            
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">1</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Shyam shrestha</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Gokarna</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">shyam@gmail.com</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Male</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500"><img src="img/male.jpg" alt="male" width="50" height="60"></td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
+                                    <a href="editprofile.html" class="text-indigo-600 hover:text-indigo-900">Edit</a>
+                                    <a href="#" class="ml-4 text-red-600 hover:text-red-900">Delete</a>
+                                </td>
+                                    
+                            </tr>
+                            <tr class="bg-gray-50 hover:bg-gray-100">
+            
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">1</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">sita shrestha</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">koteshor</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">sita@gmail.com</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Female</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500"><img src="img/female.jpg" alt="male" width="50" height="60"></td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
+                                    <a href="editprofile.html" class="text-indigo-600 hover:text-indigo-900">Edit</a>
+                                    <a href="#" class="ml-4 text-red-600 hover:text-red-900">Delete</a>
+                                </td>
+                                   
+                            </tr>
+        
+                            <tr class="bg-gray-50 hover:bg-gray-100">
+            
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">1</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">dipa shrestha</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">kritipur</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">dipa45@gmail.com</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Female</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500"><img src="img/female.jpg" alt="male" width="50" height="60"></td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
+                                    <a href="editprofile.html" class="text-indigo-600 hover:text-indigo-900">Edit</a>
+                                    <a href="#" class="ml-4 text-red-600 hover:text-red-900">Delete</a>
+                                </td>
+                                   
+                            </tr>
+                        </tbody>
+                    </table>
+              
+            </div>         
         </div>
     </div>
 
+    
+
+   
 </body>
 </html>
